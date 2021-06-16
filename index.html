@@ -50,12 +50,12 @@
     <div class="cpn-modal__body">
       <form class="cpn-form" id="formNewProduct" novalidate>
         <div class="cpn-form__row">
-          <label for="" class="cpn-form__label">Название</label>
+          <label for="" class="cpn-form__label">Название <span class="cpn-form__label-required ">*</span></label>
           <input type="text" name="name" class="cpn-field" id="name" required/>
         </div>
         <div class="cpn-form__row">
-          <label for="" class="cpn-form__label">Цвет</label>
-          <div class="cpn-form__row-list">
+          <label for="" class="cpn-form__label">Цвет <span class="cpn-form__label-required ">*</span></label>
+          <div class="cpn-form__row-list" id="grpColor">
             <div class="cpn-form__row-list-item">
               <input type="radio" name="color" class="cpn-field" id="colorBlue" value="синий" required/>
               <label for="colorBlue" class="cpn-form__label">синий</label>
@@ -71,7 +71,7 @@
           </div>
         </div>
         <div class="cpn-form__row">
-          <label for="" class="cpn-form__label">Количество</label>
+          <label for="" class="cpn-form__label">Количество <span class="cpn-form__label-required ">*</span></label>
           <input type="number" name="number" class="cpn-field" required/>
         </div>
         <div class="cpn-form-row-footer">

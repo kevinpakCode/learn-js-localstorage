@@ -83,10 +83,29 @@ form.addEventListener('submit', (e) => {
   const fieldName = form.querySelector('[name="name"]')
   const fieldColor = form.querySelector('[name="color"]:checked')
   const fieldNumber = form.querySelector('[name="number"]')
+  const grpColor = document.getElementById('grpColor')
 
   const prodName = fieldName.value.trim()
   const prodColor = fieldColor? fieldColor.value.trim() : ''
   const prodNumber = fieldNumber.value.trim()
+
+  if(prodName.length) {
+    fieldName.classList.remove('error')
+  }else{
+    fieldName.classList.add('error')
+  }
+
+  if(prodColor.length) {
+    grpColor.classList.remove('error')
+  }else{
+    grpColor.classList.add('error')
+  }
+
+  if(prodNumber.length) {
+    fieldNumber.classList.remove('error')
+  }else{
+    fieldNumber.classList.add('error')
+  }
 
   if(prodName.length&&prodColor.length&&prodNumber.length) {
 
