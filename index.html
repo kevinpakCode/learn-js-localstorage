@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test</title>
+  <link rel="stylesheet" href="assets/styles/reset.css">
+  <link rel="stylesheet" href="assets/styles/styles.css">
+</head>
+<body>
+  <div class="app-wrap">
+    <header class="header"></header>
+    <main class="main">
+      <section class="pg">
+        <div class="pg__container">
+          <div class="pg__inner">
+            <h1 class="pg__title">Список продуктов</h1>
+            <div class="pg__actions">
+              <ul class="pg__actions-list">
+                <li class="pg__actions-item"><button class="cpn-btn" data-modal-target="addProduct">+ Добавить товар</button></li>
+              </ul>
+            </div>
+            <div class="pg__content">
+              <div class="cpn-wrap-table cpn-scroll-bar--x">
+                <table class="cpn-table">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Название</th>
+                      <th>Цвет</th>
+                      <th>Количество</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody id="listProductRow">
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer"></footer>
+  </div>
+
+  <div class="cpn-modal" id="addProduct">
+    <button class="cpn-modal__btn-close">x</button>
+    <div class="cpn-modal__body">
+      <form class="cpn-form" id="formNewProduct" novalidate>
+        <div class="cpn-form__row">
+          <label for="" class="cpn-form__label">Название</label>
+          <input type="text" name="name" class="cpn-field" id="name" required/>
+        </div>
+        <div class="cpn-form__row">
+          <label for="" class="cpn-form__label">Цвет</label>
+          <div class="cpn-form__row-list">
+            <div class="cpn-form__row-list-item">
+              <input type="radio" name="color" class="cpn-field" id="colorBlue" value="синий" required/>
+              <label for="colorBlue" class="cpn-form__label">синий</label>
+            </div>
+            <div class="cpn-form__row-list-item">
+              <input type="radio" name="color" class="cpn-field" id="colorRed" value="красный" required/>
+              <label for="colorRed" class="cpn-form__label">красный</label>
+            </div>
+            <div class="cpn-form__row-list-item">
+              <input type="radio" name="color" class="cpn-field" id="colorGreen" value="зеленый" required/>
+              <label for="colorGreen" class="cpn-form__label">зеленый</label>
+            </div>
+          </div>
+        </div>
+        <div class="cpn-form__row">
+          <label for="" class="cpn-form__label">Количество</label>
+          <input type="number" name="number" class="cpn-field" required/>
+        </div>
+        <div class="cpn-form-row-footer">
+          <button class="cpn-btn-form" data-text="Добавить">Добавить</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script src="assets/js/products.js"></script>
+  <script type="module" src="assets/js/script.js"></script>
+</body>
+</html>
