@@ -214,7 +214,7 @@ if(allProEditField) {
     //keyup
     field.addEventListener('keyup', (e) => {
       const currentVal = field.value.trim()
-      if(currentVal.length<30) {
+      if(currentVal.length<31) {
         console.log(currentVal, currentVal.length)
       }
     })

@@ -50,10 +50,11 @@ class Products implements IProduct {
         color: this.color,
         number: this.number
       }
+      const rowEditId = `editName${row.id}`
       const tr = document.createElement('tr')
       tr.innerHTML = `
-        <td><div class="cpn-edit"><input type="text" value="${row.id}" class="cpn-edit__field" id="editName${row.id}}"/><button class="cpn-edit__btn"><i class="icon-edit"></i></button></div></td>
-        <td>${row.name}</td>
+        <td>${row.id}</td>
+        <td><div class="cpn-edit"><input type="text" value="${row.name}" class="cpn-edit__field" id="${rowEditId}" disabled/><button class="cpn-edit__btn" data-edit-name="${rowEditId}"><i class="icon-edit"></i></button></div></td>
         <td>${row.color}</td>
         <td>${row.number}</td>
         <td><button class="cpn-btn-delete" data-prod-id="${row.id}">Удалять</button></td>

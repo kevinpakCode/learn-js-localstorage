@@ -27,8 +27,9 @@ var Products = /** @class */ (function () {
                 color: this.color,
                 number: this.number
             };
+            var rowEditId = "editName" + row.id;
             var tr = document.createElement('tr');
-            tr.innerHTML = "\n        <td><div class=\"cpn-edit\"><input type=\"text\" value=\"" + row.id + "\" class=\"cpn-edit__field\" id=\"editName" + row.id + "}\"/><button class=\"cpn-edit__btn\"><i class=\"icon-edit\"></i></button></div></td>\n        <td>" + row.name + "</td>\n        <td>" + row.color + "</td>\n        <td>" + row.number + "</td>\n        <td><button class=\"cpn-btn-delete\" data-prod-id=\"" + row.id + "\">\u0423\u0434\u0430\u043B\u044F\u0442\u044C</button></td>\n      ";
+            tr.innerHTML = "\n        <td>" + row.id + "</td>\n        <td><div class=\"cpn-edit\"><input type=\"text\" value=\"" + row.name + "\" class=\"cpn-edit__field\" id=\"" + rowEditId + "\" disabled/><button class=\"cpn-edit__btn\" data-edit-name=\"" + rowEditId + "\"><i class=\"icon-edit\"></i></button></div></td>\n        <td>" + row.color + "</td>\n        <td>" + row.number + "</td>\n        <td><button class=\"cpn-btn-delete\" data-prod-id=\"" + row.id + "\">\u0423\u0434\u0430\u043B\u044F\u0442\u044C</button></td>\n      ";
             tbody.appendChild(tr);
             currentList.push(row);
             localStorage.setItem('products', JSON.stringify(products));
