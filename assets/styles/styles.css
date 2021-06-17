@@ -24,7 +24,6 @@ body {
   min-height: 44px;
   background-color: #efefef;
   box-shadow: 0 2px 2px 0 #00000024, 0 3px 1px -2px rgb(0 0 0 / 0%), 0 1px 5px 0 #00000033;
-  transition: all .3s ease;
 }
 
 .cpn-btn:hover {
@@ -437,7 +436,6 @@ label.error {
   
 }
 
-
 .cpn-btn-delete {
   display: inline-block;
   padding: 5px 8px;
@@ -447,7 +445,6 @@ label.error {
   min-width: 105px;
   height: 44px;
   background-color: #f10000;
-  transition: all .3s ease;
   font-size: 1rem;
   color: #fff;
 }
@@ -455,6 +452,89 @@ label.error {
 .cpn-btn-delete:hover {
   background-color: #cc1414;
 }
+
+
+/*==....==*/
+.cpn-edit {
+  min-width: 220px;
+  display: flex;
+  align-items: center;
+ /* justify-content: space-between;*/
+}
+
+.cpn-edit__field {
+  width: 200px;
+  height: 28px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  border: solid 1px #ddd;
+  margin-right: 5px;
+  background-color: transparent;
+}
+
+.cpn-edit__field:disabled {
+  border: solid 1px transparent;
+}
+
+
+
+
+/*
+*--------------------------------
+| Icons
+---------------------------------
+*/
+
+
+/*
+* icon-close
+*/
+.icon-close {
+  display: inline-block;
+  min-width: 19px;
+  min-height: 18px;
+  background-color: #A7AEBC;
+  -webkit-mask-image: url('../images/icons/icon-close.svg');
+  -webkit-mask-size: 20px 20px;
+  -webkit-mask-repeat: no-repeat ;
+  -webkit-mask-position: center;
+}
+
+/*
+* icon-edit
+*/
+.icon-edit {
+  display: inline-block;
+  min-width: 16px;
+  min-height: 16px;
+  background-color: #A7AEBC;
+  -webkit-mask-image: url('../images/icons/icon-edit.svg');
+  -webkit-mask-size: 16px 16px;
+  -webkit-mask-repeat: no-repeat ;
+  -webkit-mask-position: center;
+}
+
+
+/*
+* icon-delete
+*/
+.icon-delete {
+  display: inline-block;
+  min-width: 17px;
+  min-height: 15px;
+  background-color: #A7AEBC;
+  -webkit-mask-image: url('../images/icons/icon-delete.svg');
+  -webkit-mask-size: 20px 20px;
+  -webkit-mask-repeat: no-repeat ;
+  -webkit-mask-position: center;
+}
+
+.icon-delete--red {
+  background-color: #ff2701;
+}
+
+
+
 
 /*
 *--------------------------------

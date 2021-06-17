@@ -52,7 +52,7 @@ class Products implements IProduct {
       }
       const tr = document.createElement('tr')
       tr.innerHTML = `
-        <td>${row.id}</td>
+        <td><div class="cpn-edit"><input type="text" value="${row.id}" class="cpn-edit__field" id="editName${row.id}}"/><button class="cpn-edit__btn"><i class="icon-edit"></i></button></div></td>
         <td>${row.name}</td>
         <td>${row.color}</td>
         <td>${row.number}</td>

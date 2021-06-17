@@ -161,3 +161,63 @@ if(allProdDeleteBtn) {
 
   })
 }
+
+
+/*
+---------------------------------------
+| Edit product name
+--------------------------------------
+*/
+
+//==> Initial edit with btn
+const allProdEditBtn = document.querySelectorAll('[data-edit-name]')
+if(allProdEditBtn) {
+  allProdEditBtn.forEach(btn => {
+    const idName = btn.getAttribute('data-edit-name')
+    const field = document.getElementById(idName)
+
+    btn.addEventListener('click', (e) => {
+      e.preventDefault()
+      btn.style.display = 'none'
+      field.disabled = false
+
+      const fieldCurrentVal = field.value.trim()
+      field.value = ''
+      field.focus()
+      field.value = fieldCurrentVal
+    })
+  })
+}
+
+//==> Field Events
+const allProEditField = document.querySelectorAll('input[id*="editName"]')
+if(allProEditField) {
+  allProEditField.forEach(field => {
+    const idName = field.getAttribute('id')
+    const btn = document.querySelector(`[data-edit-name="${idName}"]`)
+
+    //Focusout
+    field.addEventListener('blur', (e) => {
+      e.preventDefault()
+      btn.style.display = 'block'
+      field.disabled = true
+    })
+
+    //keypress
+    field.addEventListener('keypress', (e) => {
+      const currentVal = field.value.trim()
+      if(currentVal.length===30) {
+        e.preventDefault()
+      }
+    })
+
+    //keyup
+    field.addEventListener('keyup', (e) => {
+      const currentVal = field.value.trim()
+      if(currentVal.length<30) {
+        console.log(currentVal, currentVal.length)
+      }
+    })
+
+  })
+}

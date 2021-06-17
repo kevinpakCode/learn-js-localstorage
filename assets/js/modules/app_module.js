@@ -15,10 +15,11 @@ export const showTbodyContent = (tbody, productsList=null) => {
   if(productsList) {
     if(productsList.length>0) {
       const newTbody = productsList.map(row=> {
+        const rowEditId = `editName${row.id}`
         return `
           <tr>
             <td>${row.id}</td>
-            <td>${row.name}</td>
+            <td><div class="cpn-edit"><input type="text" value="${row.name}" class="cpn-edit__field" id="${rowEditId}" disabled/><button class="cpn-edit__btn" data-edit-name="${rowEditId}"><i class="icon-edit"></i></button></div></td>
             <td>${row.color}</td>
             <td>${row.number}</td>
             <td><button class="cpn-btn-delete" data-prod-id="${row.id}">Удалять</button></td>

@@ -44,6 +44,7 @@ button {
   display: inline-block;
   background-color: transparent;
   transition: all .3s linear;
+  cursor: pointer;
 }
 
 button:hover>i[class*="icon-"] {
