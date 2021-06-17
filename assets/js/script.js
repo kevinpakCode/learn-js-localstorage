@@ -195,6 +195,7 @@ if(allProEditField) {
   allProEditField.forEach(field => {
     const idName = field.getAttribute('id')
     const btn = document.querySelector(`[data-edit-name="${idName}"]`)
+    let fieldValBeforeKeyup 
 
     //Focusout
     field.addEventListener('blur', (e) => {
@@ -206,6 +207,7 @@ if(allProEditField) {
     //keypress
     field.addEventListener('keypress', (e) => {
       const currentVal = field.value.trim()
+      fieldValBeforeKeyup = currentVal
       if(currentVal.length===30) {
         e.preventDefault()
       }
@@ -214,9 +216,14 @@ if(allProEditField) {
     //keyup
     field.addEventListener('keyup', (e) => {
       const currentVal = field.value.trim()
-      if(currentVal.length<31) {
-        console.log(currentVal, currentVal.length)
+      const keyCode = e.keyCode
+  
+      if((keyCode >= 48 && keyCode <= 57) || (keyCode >= 65 && keyCode <= 90) || (keyCode >= 96 && keyCode <= 111) || keyCode===8) {
+        if(currentVal.length<31) {
+          console.log("Запрос:", currentVal, currentVal.length)
+        }
       }
+      
     })
 
   })
